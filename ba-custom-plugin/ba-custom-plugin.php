@@ -12,8 +12,7 @@
 
 
 // Assets
-function my_enqueued_assets()
-{
+function my_enqueued_assets() {
   wp_enqueue_script('my-js-file', plugin_dir_url(__FILE__) . 'js/ba-scripts.js', '', time());
   wp_enqueue_style('my-css-file', plugin_dir_url(__FILE__) . 'css/ba-styles.css', '', time());
 }
@@ -22,8 +21,7 @@ add_action('wp_enqueue_scripts', 'my_enqueued_assets');
 
 
 // function that runs when shortcode is called
-function ba_country_shortcode()
-{
+function ba_country_shortcode() {
   ob_start();
 
   $url = "https://restcountries.com/v3.1/all";
@@ -157,13 +155,13 @@ function ba_country_shortcode()
             </ul>
             <!-- /Currencies -->
           </div>
+          <!-- Flag -->
           <div class="information-image">
-            <!-- Flag -->
             <img class="country-flag" src=<?php
                       echo $flagurl
                       ?>/>
-            <!-- /Flag -->
           </div>
+          <!-- /Flag -->
         </div>
       <?php
       }
